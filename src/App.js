@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Weather from './components/Weather';
 
 
@@ -18,12 +19,14 @@ export default class App extends Component {
        pressure : undefined,
        humidity : undefined,
        desription : undefined,
+       newcity : undefined
     }
     this.getWeather();
   }
+
   getWeather = async () => {
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=Kharkiv&appid=${api_key}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${this.state.newcity ? this.state.newcity: "Rabat"}&appid=${api_key}`
     );
     const response = await api_call.json();
     console.log(response)
@@ -38,10 +41,36 @@ export default class App extends Component {
       description : response.weather[0].description
     })
   }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.getWeather();
+    this.setState({
+      newcity : ""
+    })
+  }
+  handleChange = (evt) => {
+    this.setState({
+      [evt.target.name] : evt.target.value
+    })
+  }
+
+
   render() {
     const state = this.state;
     return (
       <div>
+        <div>
+          <form onSubmit={this.handleSubmit}>
+                <input 
+                name = "newcity"
+                type = "text"
+                value = {state.newcity}
+                onChange = {this.handleChange}
+                placeholder = "Add city here..."
+                />
+                <button>Get Weater</button>
+          </form>
+        </div>
         <Weather 
           city = {state.city}
           country = {state.country}
