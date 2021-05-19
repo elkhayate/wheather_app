@@ -1,0 +1,39 @@
+
+.container {
+    height: 100%;
+    width: 700px;
+    margin: auto;
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16.7806px;
+    line-height: 26px;
+    color: black;  
+    margin-top: 10%;
+}
+.header {
+    margin-top: 50px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 40%;
+    margin: auto;
+}
+.foot {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.temp {
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 69.9193px;
+    line-height: 107px;
+    color: #FFFFFF;
+    text-shadow: -2.79677px 5.59354px 34.9597px rgba(0, 0, 0, 0.1);
+}

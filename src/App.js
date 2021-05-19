@@ -1,12 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Weather from './components/Weather';
 
 
-function App() {
+const api_key = "bbf619c16870c7aa052f3f83109bba96";
+
+
+export default class App extends Component {
+  constructor(props) {
+    super(props)
   
-  return(
-    <div>
-
-    </div>
-  )
+    this.state = {
+       city : undefined,
+       country : undefined,
+       temp : undefined,
+       temp_max : undefined,
+       tem_min : undefined,
+       pressure : undefined,
+       humidity : undefined,
+       desription : undefined,
+    }
+    this.getWeather();
+  }
+  getWeather = async () => {
+    const api_call = await fetch(
+      `http://api.openweathermap.org/data/2.5/weather?q=Kharkiv&appid=${api_key}`
+    );
+    const response = await api_call.json();
+    console.log(response)
+    this.setState({
+      city : response.name,
+      country : response.sys.country,
+      temp : response.main.temp,
+      temp_max : response.main.temp_max,
+      temp_min : response.main.temp_min,
+      pressure : response.main.pressure,
+      humidity : response.main.humidity,
+      description : response.weather[0].description
+    })
+  }
+  render() {
+    const state = this.state;
+    return (
+      <div>
+        <Weather 
+          city = {state.city}
+          country = {state.country}
+          temp = {state.temp}
+          humidity = {state.humidity}
+          pressure = {state.pressure}
+          max = {state.temp_max}
+          min = {state.temp_min}
+          description = {state.description}
+        />
+      </div>
+    )
+  }
 }
-export default App;
