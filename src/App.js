@@ -19,7 +19,8 @@ export default class App extends Component {
        pressure : undefined,
        humidity : undefined,
        desription : undefined,
-       newcity : undefined
+       newcity : undefined,
+       error : false
     }
     this.getWeather();
   }
@@ -30,16 +31,24 @@ export default class App extends Component {
     );
     const response = await api_call.json();
     console.log(response)
-    this.setState({
-      city : response.name,
-      country : response.sys.country,
-      temp : response.main.temp,
-      temp_max : response.main.temp_max,
-      temp_min : response.main.temp_min,
-      pressure : response.main.pressure,
-      humidity : response.main.humidity,
-      description : response.weather[0].description
-    })
+    if(response.main) {
+      this.setState({
+        city : response.name,
+        country : response.sys.country,
+        temp : response.main.temp,
+        temp_max : response.main.temp_max,
+        temp_min : response.main.temp_min,
+        pressure : response.main.pressure,
+        humidity : response.main.humidity,
+        description : response.weather[0].description,
+        error : false
+      })
+    }else{
+      this.setState({
+        error : true
+      })
+    }
+   
   }
   handleSubmit = (e) => {
     e.preventDefault();
@@ -72,16 +81,22 @@ export default class App extends Component {
                 <button className={style.btn}>Get Weater</button>
           </form>
         </div>
-        <Weather 
-          city = {state.city}
-          country = {state.country}
-          temp = {state.temp}
-          humidity = {state.humidity}
-          pressure = {state.pressure}
-          max = {state.temp_max}
-          min = {state.temp_min}
-          description = {state.description}
-        />
+
+        {
+          state.error ? (
+            <div className={style.error}>Please put a valid city name.</div>
+          ) : (  <Weather 
+            city = {state.city}
+            country = {state.country}
+            temp = {state.temp}
+            humidity = {state.humidity}
+            pressure = {state.pressure}
+            max = {state.temp_max}
+            min = {state.temp_min}
+            description = {state.description}
+          />)
+        }
+      
       </div>
     )
   }

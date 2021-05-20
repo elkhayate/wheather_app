@@ -33,3 +33,13 @@
     color: #444E72;
     border: 0px;
 }
+.error {
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 26px;
+    color: #FFFFFF;
+    text-shadow: -1.39839px 2.09758px 0.699193px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
