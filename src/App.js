@@ -27,7 +27,7 @@ export default class App extends Component {
 
   getWeather = async () => {
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${this.state.newcity ? this.state.newcity: "Rabat"}&appid=${api_key}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${this.state.newcity ? this.state.newcity: "Rabat"}&appid=${api_key}`
     );
     const response = await api_call.json();
     console.log(response)
