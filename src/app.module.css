@@ -1,13 +1,15 @@
 .header {
     height: 100px;
-    width: 100%;
-    margin-top: 15px;
+    width: 40%;
+    margin-top: 30px;
+    margin: auto;
 }
 .form {
     display: flex;
     justify-content: space-around;
     align-content: center;
     align-items: center;
+    margin: auto;
 }
 .input {
     width : 250px;

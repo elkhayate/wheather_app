@@ -45,7 +45,7 @@ function Weather(props) {
                     <div className={style.info}>
                         <h4>{props.humidity}%</h4>
                         <h4>{props.pressure} hPa</h4>
-                        <h4>{calCelsius(props.max)}°-{calCelsius(props.min)}°</h4>
+                        <h4>{calCelsius(props.max)}°/ {calCelsius(props.min)}°</h4>
                     </div>
                 </div>
                 
