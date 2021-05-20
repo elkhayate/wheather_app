@@ -1,0 +1,33 @@
+.header {
+    height: 100px;
+    width: 100%;
+    margin-top: 15px;
+}
+.form {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+.input {
+    width : 250px;
+    height: 33px;
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: normal;
+}
+.btn {
+    width: 153.82px;
+    height: 44.75px;
+    background: #FFFFFF;
+    box-shadow: -2.79677px 5.59354px 34.9597px 2.79677px rgba(0, 0, 0, 0.1), inset 1.39839px -2.09758px 4.19516px rgba(0, 0, 0, 0.25), inset -4.19516px 2.79677px 2.79677px rgba(255, 255, 255, 0.25);
+    border-radius: 13.9839px;
+    cursor: pointer;
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19.5855px;
+    line-height: 19px;
+    color: #444E72;
+    border: 0px;
+}

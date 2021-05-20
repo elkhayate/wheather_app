@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import style from "./app.module.css";
 import Weather from './components/Weather';
 
 
@@ -59,16 +59,17 @@ export default class App extends Component {
     const state = this.state;
     return (
       <div>
-        <div>
-          <form onSubmit={this.handleSubmit}>
+        <div className={style.header}>
+          <form onSubmit={this.handleSubmit} className={style.form}>
                 <input 
                 name = "newcity"
                 type = "text"
                 value = {state.newcity}
                 onChange = {this.handleChange}
                 placeholder = "Add city here..."
+                className = {style.input}
                 />
-                <button>Get Weater</button>
+                <button className={style.btn}>Get Weater</button>
           </form>
         </div>
         <Weather 

@@ -1,39 +1,83 @@
 
 .container {
-    height: 100%;
-    width: 700px;
-    margin: auto;
+    height: 700px;
+    width: 30%;
+    margin-left: 35%;
     font-family: Overpass;
     font-style: normal;
     font-weight: bold;
     font-size: 16.7806px;
     line-height: 26px;
     color: black;  
-    margin-top: 10%;
+    margin-top: 2%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 13.9839px;
+    position: absolute;
 }
 .header {
     margin-top: 50px;
 }
-
-.info {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 40%;
-    margin: auto;
+.city {
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 26px;
+    color: #FFFFFF;
+    text-shadow: -1.39839px 2.09758px 0.699193px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
-.foot {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+.descri {
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 26px;
+    color: #FFFFFF; 
+    text-shadow: -1.39839px 2.09758px 0.699193px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
+.date {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 19px;
+    color: #FFFFFF;
+    text-shadow: -1.39839px 2.09758px 0.699193px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 .temp {
     font-family: Overpass;
     font-style: normal;
     font-weight: normal;
-    font-size: 69.9193px;
+    font-size: 105px;
     line-height: 107px;
     color: #FFFFFF;
     text-shadow: -2.79677px 5.59354px 34.9597px rgba(0, 0, 0, 0.1);
+    margin-left: 30px;
+    text-align: center;
+}
+
+.container h4 {
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 19px;
+    color: #FFFFFF; 
+    text-shadow: -1.39839px 2.09758px 0.699193px rgba(0, 0, 0, 0.1);
+}
+.sub {
+    display: flex;
+    width: 65%;
+    margin: auto;
+    justify-content: space-around;
+}
+.sep {
+    height: 100%;
+}
+.sep img {
+    height: 150px;
+    margin-top: 30px;
 }
