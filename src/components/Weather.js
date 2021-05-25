@@ -1,6 +1,8 @@
 import React from 'react';
 import style from "./weather.module.css";
 import rectangle from "../img/rectangle.png";
+
+
 function calCelsius(temp) {
     let cell = Math.floor(temp - 273.15);
     return cell;

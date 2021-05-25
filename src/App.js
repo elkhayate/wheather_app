@@ -27,7 +27,7 @@ export default class App extends Component {
 
   getWeather = async () => {
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${this.state.newcity ? this.state.newcity: "Rabat"}&appid=${api_key}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${this.state.newcity ? this.state.newcity: "Rabat"}&appid=${api_key}`
     );
     const response = await api_call.json();
     console.log(response)
@@ -67,7 +67,7 @@ export default class App extends Component {
   render() {
     const state = this.state;
     return (
-      <div>
+      <div className={style.container}>
         <div className={style.header}>
           <form onSubmit={this.handleSubmit} className={style.form}>
                 <input 
@@ -75,16 +75,17 @@ export default class App extends Component {
                 type = "text"
                 value = {state.newcity}
                 onChange = {this.handleChange}
-                placeholder = "Add city here..."
+                placeholder = "City..."
                 className = {style.input}
                 />
                 <button className={style.btn}>Get Weater</button>
+                
           </form>
         </div>
 
         {
           state.error ? (
-            <div className={style.error}>Please put a valid city name.</div>
+            <div className={style.error}>Please put a valid city name</div>
           ) : (  <Weather 
             city = {state.city}
             country = {state.country}
